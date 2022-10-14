@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './TrackList.css';
 import Track from '../Track/Track.js';
 
@@ -12,7 +12,10 @@ export default class TrackList extends React.Component {
           {
             this.props.tracks.map(track => {
               return <Track track={track}
-                          key={track.id} />
+                          key={track.id}
+                          onAdd={this.props.onAdd}
+                          onRemove={this.props.onRemove} 
+                          isRemoval={this.props.isRemoval}/>
             })
           }
         </div>
